@@ -48,9 +48,20 @@ export default function Home() {
   }
 
   const handleLogout = async () => {
-    await supabase.auth.signOut()
-    setQrValue('')
-    setUrl('')
+    try {
+      const { error } = await supabase.auth.signOut()
+      if (error) {
+        alert(`Logout failed: ${error.message}`)
+        return
+      }
+      // Clear local state
+      setQrValue('')
+      setUrl('')
+      setSession(null)
+    } catch (err) {
+      console.error('Logout error:', err)
+      alert('Logout failed. Please try again.')
+    }
   }
 
   const generateQR = (e: React.FormEvent) => {
