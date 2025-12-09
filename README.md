@@ -17,6 +17,18 @@ A simple, premium-designed web application to generate QR codes from URLs, secur
 2. Once created, go to **Project Settings** -> **API**.
 3. Copy the `Project URL` and `anon public` key.
 4. Go to **Authentication** -> **Providers** and ensure **Email** is enabled.
+5. **GitHub OAuth Setup**:
+   - Go to **Authentication** -> **Providers** -> **GitHub**.
+   - Enable **GitHub**.
+   - You will need a **Client ID** and **Client Secret**.
+   - Go to [GitHub Developer Settings](https://github.com/settings/developers) -> **OAuth Apps** -> **New OAuth App**.
+   - **Application Name**: QR Master (or your app name).
+   - **Homepage URL**: Your Vercel deployment URL (e.g., `https://your-project.vercel.app`) or `http://localhost:3000` for local dev.
+   - **Authorization callback URL**: `https://<your-supabase-project-ref>.supabase.co/auth/v1/callback`.
+     - You can find this URL in the Supabase GitHub provider settings page (it's listed as "Callback URL").
+   - Click **Register application**.
+   - Copy the **Client ID** and generate a new **Client Secret**.
+   - Paste them into the Supabase GitHub provider settings and click **Save**.
 
 ### 2. Local Development
 

@@ -180,3 +180,38 @@ button:active {
 .logout-btn:hover {
   background: rgba(255, 255, 255, 0.05);
 }
+
+.github-btn {
+  background: #24292e;
+  color: white;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.github-btn:hover {
+  background: #2f363d;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #888;
+  margin: 1.5rem 0;
+  width: 100%;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.divider span {
+  padding: 0 10px;
+  font-size: 0.9rem;
+}
